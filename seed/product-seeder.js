@@ -1,7 +1,7 @@
-var Product = require('../models/product');
-var mongoose = require('mongoose');
+import Product from '../models/product';
+import { connect, disconnect } from 'mongoose';
 
-mongoose.connect('mongodb://localhost:27017/shopping')
+connect('mongodb://localhost:27017/shopping')
 
 var products = [
 new Product({
@@ -59,5 +59,5 @@ for (var i = 0; i < products.length; i++) {
 }
 
 function exit() {
-    mongoose.disconnect();
+    disconnect();
 }

@@ -3,12 +3,12 @@ module.exports = function Cart(oldCart) {
     this.totalQty = oldCart.totalQty || 0;
     this.totalPrice = oldCart.totalPrice || 0;
 
-    this.add = function(ietem, id) {
+    this.add = function(item, id) {
         var storeItem = this.items[id];
         if (!storeItem) {
             storeItem =this.items[id] = {item: item, qty: 0, price: 0};
         }
-        storeItem,qty++;
+        storeItem.qty++;
         storeItem.price = storeItem.price * storeItem.qty;
         this.totalQty++;
         this.totalPrice += storeItem.item.price;

@@ -1,9 +1,9 @@
-var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+Stripe.setPublishableKey('pk_test_8UxWZXG0TactzgObCviiTf2M');
 
-var $form = $('#checkout-form')
+var $form = $('#checkout-form');
 
 $form.submit(function (event) {
-    $form.find('button').prop('disable', true);
+    $form.find('button').prop('disabled', true);
     Stripe.card.createToken({
         name: $('#card-name').val(),
         number: $('#card-number').val(),
